@@ -3,7 +3,7 @@ package com.andestic.matricula.domain;
 import javax.persistence.*;
 
 /**
- * Created by jvillane on 31-03-15.
+ * Created by jvillane on 31-03-15a.
  */
 @Entity
 @Table(name = "persona")
