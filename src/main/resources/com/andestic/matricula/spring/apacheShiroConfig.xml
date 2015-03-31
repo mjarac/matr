@@ -39,14 +39,14 @@
     </bean>
 
     <bean id="ehCacheManager" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
-        <property name="configLocation" value="file:${CONFIG_PATH}/reserva/ehcache.xml" />
+        <property name="configLocation" value="file:${CONFIG_PATH}/matr/ehcache.xml" />
     </bean>
 
     <!--<bean id="sessionManager" class="org.apache.shiro.web.session.mgt.DefaultWebSessionManager">
         <property name="sessionIdCookie">
             <bean class="org.apache.shiro.web.servlet.SimpleCookie">
                 <property name="name" value="JSESSIONIDNATIVO" />
-                <property name="domain" value="reserva" />
+                <property name="domain" value="matr" />
                 <property name="path" value="/" />
             </bean>
         </property>
