@@ -28,6 +28,7 @@
             <value>
                 /logout = logout
                 /main.jsf = authc, perms[botonsaludar:ver]
+                / = authc, perms[botonsaludar:ver]
                 /** = authc
             </value>
         </property>
