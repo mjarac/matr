@@ -1,27 +1,30 @@
 package com.andestic.matricula.dao.imp;
 
 import com.andestic.matricula.dao.interfac.IAuthorizationDao;
+import org.hibernate.SessionFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
 import java.util.HashMap;
 import java.util.List;
 
 /**
  * Created by marcos.jara on 27-03-2015.
  */
+@Repository
 public class AuthorizationDaoImpl implements IAuthorizationDao {
     private final Logger logger = LoggerFactory.getLogger(AuthorizationDaoImpl.class);
-    @PersistenceContext
-    private EntityManager entityManager;
 
+    @Autowired
+    private SessionFactory sessionFactory;
+
+    @SuppressWarnings("unchecked")
     @Override
     public List<Object[]> getPrivileges(HashMap<String, String> params) {
 
-        Query query = entityManager.createNativeQuery("SELECT a.codigo, a.dominio, a.nombre nombre_facultad,a.tipo, per.nombre nombre_permiso, per.descripcion\n" +
+        return sessionFactory.getCurrentSession().createSQLQuery("SELECT a.codigo, a.dominio, a.nombre, a.tipo, per.nombre,  per.descripcion\n" +
                 "        FROM aut_usuario u\n" +
                 "        left join aut_privilegio pri on (pri.usuario_id = u.id)\n" +
                 "        left join aut_agrupacion a on (pri.agrupacion_id = a.id)\n" +
@@ -35,8 +38,6 @@ public class AuthorizationDaoImpl implements IAuthorizationDao {
                 "        and a.activa = 1\n" +
                 "        and r.activo = 1\n" +
                 "        and per.activo = 1\n" +
-                "        and m.activo = 1");
-
-        return query.getResultList();
+                "        and m.activo = 1").list();
     }
 }

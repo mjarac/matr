@@ -16,6 +16,8 @@
         <version.shiro>1.2.3</version.shiro>
         <logback.version>1.0.0</logback.version>
         <tipo.dependencia>compile</tipo.dependencia>
+        <spring.version>3.0.7.RELEASE</spring.version><!--4.0.5.RELEASE-->
+        <hibernate.version>3.4.0.GA</hibernate.version><!--4.2.12.Final-->
     </properties>
 
     <repositories>
@@ -37,16 +39,32 @@
     <dependencies>
         <!-- Para poder realizar la integración de JSF con Spring. Es por la clase SpringBeanFacesELResolver que se agrega en faces-config.xml -->
         <dependency>
+            <groupId>javax.inject</groupId>
+            <artifactId>javax.inject</artifactId>
+            <version>1</version>
+        </dependency>
+        <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
-            <version>4.0.5.RELEASE</version>
+            <version>${spring.version}</version><!-- 4.0.5.RELEASE-->
             <scope>${tipo.dependencia}</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context-support</artifactId>
-            <version>4.0.5.RELEASE</version>
+            <version>${spring.version}</version>
             <scope>${tipo.dependencia}</scope>
+        </dependency>
+        <!--<dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${spring.version}</version>
+        </dependency>-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>${spring.version}</version>
+            <!--<version>3.0.7.RELEASE</version>--><!-- 3.0.7.RELEASE-->
         </dependency>
         <dependency>
             <groupId>javax.faces</groupId>
@@ -136,31 +154,20 @@
         </dependency>
         <!-- Hibernate -->
         <dependency>
-            <groupId>org.hibernate.common</groupId>
-            <artifactId>hibernate-commons-annotations</artifactId>
-            <version>4.0.1.Final</version>
-            <classifier>tests</classifier>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-orm</artifactId>
-            <version>4.1.6.RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>org.hibernate.javax.persistence</groupId>
-            <artifactId>hibernate-jpa-2.0-api</artifactId>
-            <version>1.0.1.Final</version>
-        </dependency>
-        <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-entitymanager</artifactId>
-            <version>4.0.1.Final</version>
+            <version>${hibernate.version}</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>
             <scope>${tipo.dependencia}</scope>
+        </dependency>
+        <dependency>
+            <groupId>commons-dbcp</groupId>
+            <artifactId>commons-dbcp</artifactId>
+            <version>1.4</version>
         </dependency>
     </dependencies>
     <build>

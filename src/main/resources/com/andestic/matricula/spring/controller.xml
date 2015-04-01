@@ -6,14 +6,6 @@
 
     <import resource="classpath:com/andestic/matricula/spring/config.xml"/>
 
-    <bean id="authorizationController" class="com.andestic.matricula.controller.AuthorizationController">
-        <property name="authorizationService" ref="AuthorizationServiceImpl"></property>
-    </bean>
-    <bean id="AuthorizationServiceImpl" class="com.andestic.matricula.servicio.impl.AuthorizationServiceImpl">
-        <property name="autenticacionDao" ref="AutenticacionDaoImpl"></property>
-        <property name="authorizationDao" ref="AuthorizationDaoImpl"></property>
-    </bean>
-
-    <bean id="AutenticacionDaoImpl" class="com.andestic.matricula.dao.imp.AutenticacionDaoImpl"></bean>
-    <bean id="AuthorizationDaoImpl" class="com.andestic.matricula.dao.imp.AuthorizationDaoImpl"></bean>
+    <!--<bean id="authorizationController" class="com.andestic.matricula.controller.AuthorizationController"></bean>
+    <bean id="AuthorizationServiceImpl" class="com.andestic.matricula.servicio.impl.AuthorizationServiceImpl"></bean>-->
 </beans>
