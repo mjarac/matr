@@ -28,7 +28,7 @@ public class AutenticacionDaoImpl implements IAutenticacionDao{
         return sessionFactory.getCurrentSession().createSQLQuery("SELECT aut_usuario.id, aut_usuario.activo, aut_usuario.apellido_materno, aut_usuario.apellido_paterno, aut_usuario.identificador,\n" +
                     "aut_usuario.nombres,\n" +
                     "aut_usuario.rut \n" +
-                    "FROM authorization.aut_usuario WHERE rut = '" + identificador + "'").list();
+                    "FROM authorization.aut_usuario WHERE rut = :identificador").setParameter("identificador",identificador).list();
 
 
     }
