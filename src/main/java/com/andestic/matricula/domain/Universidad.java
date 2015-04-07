@@ -2,16 +2,14 @@ package com.andestic.matricula.domain;
 
 import javax.persistence.*;
 
-/**
- * Created by jvillane on 31-03-15a.
- */
 @Entity
-@Table(name = "persona")
-public class Persona {
+@Table(name = "mat_universidades")
+public class Universidad {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private
     long id;
-    String nombre;
+    private String nombre;
 
     public long getId() {
         return id;

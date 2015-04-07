@@ -69,6 +69,7 @@ public class AuthorizationRealm extends AuthorizingRealm {
         this.logger.debug("PERMISOS SETEADOS: " + info.getStringPermissions());
         this.logger.debug("SETEANDO MAPA EN AuthorizationInfo!");
         info.setObjetosOrganismosPermisos(objetosOrganismosPermisos);
+        //TODO borrar cuando el dibujo deje de jugar
         if (principalCollection.getPrimaryPrincipal().equals("marcos.jara"))
         {
             info.addStringPermission("botonsaludar:ver");

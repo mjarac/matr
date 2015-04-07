@@ -6,7 +6,22 @@
 
     <persistence-unit transaction-type="RESOURCE_LOCAL" name="matr">
         <provider>org.hibernate.ejb.HibernatePersistence</provider>
-        <class>com.andestic.matricula.domain.Persona</class>
+        <class>com.andestic.matricula.domain.AscendenciaEtnica</class>
+        <class>com.andestic.matricula.domain.Beca</class>
+        <class>com.andestic.matricula.domain.Candidato</class>
+        <class>com.andestic.matricula.domain.Carrera</class>
+        <class>com.andestic.matricula.domain.Comuna</class>
+        <class>com.andestic.matricula.domain.Correo</class>
+        <class>com.andestic.matricula.domain.Direccion</class>
+        <class>com.andestic.matricula.domain.EstadoCivil</class>
+        <class>com.andestic.matricula.domain.Facultad</class>
+        <class>com.andestic.matricula.domain.Matricula</class>
+        <class>com.andestic.matricula.domain.Nacionalidad</class>
+        <class>com.andestic.matricula.domain.Parametro</class>
+        <class>com.andestic.matricula.domain.Proceso</class>
+        <class>com.andestic.matricula.domain.TipoCorreo</class>
+        <class>com.andestic.matricula.domain.TipoDireccion</class>
+        <class>com.andestic.matricula.domain.Universidad</class>
 
         <!--<properties>-->
         <!--<property name="openjpa.ConnectionURL" value="jdbc:mysql://sqldesa.uchile.cl:3306/libe?sessionVariables=storage_engine=InnoDB"/>-->
